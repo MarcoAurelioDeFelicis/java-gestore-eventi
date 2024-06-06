@@ -1,6 +1,8 @@
 package javaGestoreEventi;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Evento {
 	private String titolo;
@@ -66,5 +68,17 @@ public class Evento {
 		}else {
 			System.out.println("ALLERT!! nessuna prenotazxione disponibile da disdire ALLERT!!");
 		}
+	}
+	
+	@Override
+	public String toString() {
+		String pattern = "dd/MM/yyyy";
+		SimpleDateFormat simpledateformat = new SimpleDateFormat (pattern);
+		String data = simpledateformat.format(new Date());
+		System.out.println(data);
+		return data;
+		
+				
+		
 	}
 }

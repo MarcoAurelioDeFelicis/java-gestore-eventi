@@ -48,5 +48,23 @@ public class Evento {
 	}
 	
 	
+	public void prenota() {
+		if (data.isBefore(LocalDate.now())) {
+			System.out.println("ALLERT!! evento non disponibile ALLERT!!");
+		}else if (postiTotali > postiPrenotati) {
+			postiPrenotati += 1;
+		}else {
+			System.out.println("ALLERT!! posti non disponibili ALLERT!!");
+		}
+	}
 	
+	public void disdici() {
+		if (data.isBefore(LocalDate.now())) {
+			System.out.println("ALLERT!! evento non disponibile ALLERT!!");
+		}else if (postiTotali > postiPrenotati) {
+			postiPrenotati -= 1;
+		}else {
+			System.out.println("ALLERT!! nessuna prenotazxione disponibile da disdire ALLERT!!");
+		}
+	}
 }

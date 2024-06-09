@@ -2,6 +2,7 @@ package javaGestoreEventi;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Evento {
@@ -70,13 +71,17 @@ public class Evento {
 		}
 	}
 	
+	
+	
 	@Override
 	public String toString() {
-		String pattern = "dd/MM/yyyy";
-		SimpleDateFormat simpledateformat = new SimpleDateFormat (pattern);
-		String data = simpledateformat.format(new Date());
-		System.out.println(data);
-		return data;
+		//String pattern = "dd/MM/yyyy";
+		//SimpleDateFormat simpledateformat = new SimpleDateFormat (pattern);
+		//String data = simpledateformat.format(new Date());
+		//System.out.println(data);
+		//return data;
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		return "Evento:" + titolo + " In data: " + data.format(formatter);
 		
 				
 		

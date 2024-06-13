@@ -1,15 +1,14 @@
 package javaGestoreEventi;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 public class Evento {
 	private String titolo;
 	private LocalDate data;
 	private int postiTotali;
 	private int postiPrenotati;
+	private int postiDisdetti ;
 	
 	
 	public Evento(String titolo, LocalDate data, int postiTotali) {
@@ -18,7 +17,7 @@ public class Evento {
 		this.data = data;
 		this.postiTotali = postiTotali;
 		this.postiPrenotati = 0;
-	
+		this.postiDisdetti =0;
 	}
 
 //GETTER N' SETTER
@@ -49,6 +48,12 @@ public class Evento {
 	public int getPostiPrenotati() {
 		return postiPrenotati;
 	}
+	
+	public int getPostiDisdetti() {
+		return postiDisdetti;
+	}
+	
+	
 	
 	
 	public void prenota() {

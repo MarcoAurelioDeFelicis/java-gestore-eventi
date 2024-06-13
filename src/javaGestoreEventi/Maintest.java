@@ -76,15 +76,15 @@ public class Maintest {
 			System.out.printf("posti rimanenti per evento :" + userEvento + "\n SONO: " + postiRimanenti );
 			
 			//DISDIRE
-			System.out.println("\n Desideri DISDIRE prenotazioni posti? ");
+			System.out.println("\n Desideri DISDIRE prenotazioni posti? SI-NO");
 			String yesNo = scan.nextLine(); 
 			
 			if(yesNo.equalsIgnoreCase("si".toLowerCase())) {
-				System.out.println("inserire numero posti da disdire");	
-				int postiDisdetti = scan.nextInt();
-				if (postiDisdetti >0) {
+				System.out.println("inserire numero posti da disdire ");	
+				    int userPostiDisdetti = scan.nextInt();
+				if ( userPostiDisdetti > 0) {
 					evento.disdici();
-					System.out.println("POSTI DISDETTI: " + postiDisdetti);
+					System.out.println("POSTI DISDETTI: " + userPostiDisdetti );
 				}
 				
 			}else {
@@ -92,10 +92,11 @@ public class Maintest {
 			}
 			
 			//POSTI RIMASTI DOPO DISDETTA
-			System.out.printf("posti rimanenti per evento :" + userTitolo + "\n SONO: " + postiRimanenti );
+			int postiRimanentiDisdetta = evento.getPostiTotali() + evento.getPostiDisdetti();
+			System.out.printf("posti rimanenti per evento :" + userTitolo + "\n SONO: " + postiRimanentiDisdetta);
 			
 		    //EVENTO ORGANIZZATO
-			System.out.println("\n     <<Hai organizzato l'evento:  " + messageEvent + ": " + userTitolo + "\n in data: " + evento.getData());
+			System.out.println("\n     <<Hai organizzato l'evento:  " + messageEvent + ": " + userTitolo + "in data: " + evento.getData() + ">>");
 			
 		
 		
